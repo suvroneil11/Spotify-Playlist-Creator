@@ -24,8 +24,8 @@ last = pylast.LastFMNetwork(api_key=os.environ.get('LFM_API_KEY'), api_secret=os
 track = last.get_track(artist_name, track_name)
 song_uri = []
 
-#Ge the recommendations and Look for the recommended songs in spotify and get the URIs of each song
-for key in islice(track.get_similar(), 30):
+#Get the recommendations and Look for the recommended songs in spotify and get the URIs of each song
+for key in islice(track.get_similar(), 30):  #Change 30 to any number to generate that many songs in the playlist
     song = key.item
     artist = str(song).split("-")[0]
     track_title = str(song).split("-")[1]
